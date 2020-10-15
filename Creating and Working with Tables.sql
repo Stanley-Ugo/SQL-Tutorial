@@ -30,3 +30,10 @@ Delete from tblPerson where ID = 4
 --Adding a check constraint for tblPerson table--
 ALTER TABLE tblPerson
 ADD CONSTRAINT CK_tblPerson_Age CHECK (AGE > 0 AND AGE < 150)
+
+--Indentity Column--
+Create Table tblPerson1
+(
+PersonId int Identity(1,1) Primary Key,
+Name nvarchar(20)
+)
