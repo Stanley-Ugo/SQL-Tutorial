@@ -37,3 +37,13 @@ Create Table tblPerson1
 PersonId int Identity(1,1) Primary Key,
 Name nvarchar(20)
 )
+
+--Reseeding the database--
+DBCC CHECKIDENT(tblPerson1, RESEED, 0)
+
+--checking Last Generated Identity values--
+Select SCOPE_IDENTITY()
+
+--Unique key constraint--
+ALTER TABLE tblPerson
+Add Constraint UQ_tblPerson_Email Unique(Email)
