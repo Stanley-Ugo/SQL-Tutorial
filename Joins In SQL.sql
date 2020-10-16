@@ -39,5 +39,11 @@ ON tblEmployees.DepartmentId = tblDepartment.Id
 --Left Join for DepartmentName--
 Select Name, Gender, Salary, DepartmentName
 from tblEmployees
-LEFT JOIN tblDepartment
+LEFT OUTER JOIN tblDepartment
+ON tblEmployees.DepartmentId = tblDepartment.Id
+
+--Right Join for DepartmentName--
+Select Name, Gender, Salary, DepartmentName
+from tblEmployees
+RIGHT OUTER JOIN tblDepartment
 ON tblEmployees.DepartmentId = tblDepartment.Id
