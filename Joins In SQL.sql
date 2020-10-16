@@ -28,3 +28,10 @@ Foreign Key (DepartmentId) references tblDepartment (ID)
 Insert Into tblEmployees Values ('Russell', 'Male',8800, Null)
 
 Select * from tblEmployees
+Select * from tblDepartment
+
+--Inner Join for DepartmentName--
+Select Name, Gender, Salary, DepartmentName
+from tblEmployees
+JOIN tblDepartment
+ON tblEmployees.DepartmentId = tblDepartment.Id
