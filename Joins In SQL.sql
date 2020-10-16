@@ -33,5 +33,11 @@ Select * from tblDepartment
 --Inner Join for DepartmentName--
 Select Name, Gender, Salary, DepartmentName
 from tblEmployees
-JOIN tblDepartment
+INNER JOIN tblDepartment
+ON tblEmployees.DepartmentId = tblDepartment.Id
+
+--Left Join for DepartmentName--
+Select Name, Gender, Salary, DepartmentName
+from tblEmployees
+LEFT JOIN tblDepartment
 ON tblEmployees.DepartmentId = tblDepartment.Id
