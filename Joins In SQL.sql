@@ -23,3 +23,8 @@ DepartmentId int NUll
 --Adding a Fk to reference tblDepartment table--
 Alter table tblEmployees add constraint tblEmployees_DepartmentId_FK
 Foreign Key (DepartmentId) references tblDepartment (ID)
+
+--Seeding tblEmployees--
+Insert Into tblEmployees Values ('Russell', 'Male',8800, Null)
+
+Select * from tblEmployees
