@@ -29,3 +29,18 @@ Full Join tblDepartment
 On tblEmployees.DepartmentId = tblDepartment.Id
 Where tblEmployees.DepartmentId Is NULL
 Or tblDepartment.Id is NULL
+
+
+--Self JOINS in SQL SERVER--
+--Creating Sample Table--
+Create Table tblEmployees1
+(
+EmployeeId int identity(1,1) NOT NULL Primary Key,
+Name nvarchar(20) NOT NULL,
+ManagerId int NULL
+)
+
+--Seeding Data Into tblEmployees1--
+Insert into tblEmployees1 Values ('Sam', 1)
+
+Select * from tblEmployees1
