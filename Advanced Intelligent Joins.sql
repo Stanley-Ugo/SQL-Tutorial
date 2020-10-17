@@ -46,8 +46,14 @@ Insert into tblEmployees1 Values ('Sam', 1)
 Select * from tblEmployees1
 
 --Self Join--
---Left Self JOIN
+--Left Outter Self JOIN
 Select   E.Name as Employee, M.Name as Manager
 From tblEmployees1 E
 Left join tblEmployees1 M
+On         E.ManagerId = M.EmployeeId
+
+--Inner Self JOIN
+Select   E.Name as Employee, M.Name as Manager
+From tblEmployees1 E
+Inner join tblEmployees1 M
 On         E.ManagerId = M.EmployeeId
