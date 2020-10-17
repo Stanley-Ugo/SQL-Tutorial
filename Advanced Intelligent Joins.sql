@@ -2,7 +2,7 @@
 Select * from tblEmployees
 Select * from tblDepartment
 
---Getting only the None Matching Rows from the Left--
+--Getting only the None Matching Rows from the Left Table--
 Select Name, Gender, Salary, DepartmentName
 from tblEmployees
 Left Join tblDepartment
