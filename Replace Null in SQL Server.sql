@@ -32,3 +32,7 @@ select * from tblCoalesce
 --Seeding the Table--
 Insert into tblCoalesce  Values ('James', 'Nick', 'Nancy')
 
+
+--Retrieves the first none NULL Value in a row--
+Select Id, COALESCE(FirstName, MiddleName, LastName) as Name
+from   tblCoalesce
