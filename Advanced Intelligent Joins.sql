@@ -57,3 +57,8 @@ Select   E.Name as Employee, M.Name as Manager
 From tblEmployees1 E
 Inner join tblEmployees1 M
 On         E.ManagerId = M.EmployeeId
+
+--Cross Self JOIN
+Select   E.Name as Employee, M.Name as Manager
+From tblEmployees1 E
+cross join tblEmployees1 M
