@@ -18,3 +18,17 @@ Select     E.Name as Employee, CASE WHEN M.Name IS NULL THEN 'No Manager' ELSE M
 from       tblEmployees1 E
 Left Join  tblEmployees1 M
 On         E.ManagerId = M.EmployeeId
+
+--COALESCE FUNCTION In Details--
+--Adding a Table--
+Create Table tblCoalesce
+(
+Id int identity(1,1) Primary Key,
+FirstName nvarchar(20) NULL,
+MiddleName nvarchar(20) NULL,
+LastName nvarchar(20) NULL
+)
+select * from tblCoalesce
+--Seeding the Table--
+Insert into tblCoalesce  Values ('James', 'Nick', 'Nancy')
+
