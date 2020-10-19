@@ -29,3 +29,8 @@ Insert into tblUKCustomers Values ('Sam','S@S.com')
 Select * from tblIndiaCustomers
 UNION All
 Select * from tblUKCustomers
+
+--Union sorts the result & remove duplicates from both tables
+Select * from tblIndiaCustomers
+UNION
+Select * from tblUKCustomers
