@@ -24,3 +24,8 @@ Select * from tblUKCustomers
 
 --Seeding Data to tblUKCustomers Table--
 Insert into tblUKCustomers Values ('Sam','S@S.com')
+
+--Union All combines result from both tables
+Select * from tblIndiaCustomers
+UNION All
+Select * from tblUKCustomers
