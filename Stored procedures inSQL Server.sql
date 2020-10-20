@@ -10,3 +10,13 @@ END
 
 --Executing the Stored Procedure
 spGetEmployees
+
+--Creating stored procedured with Gender & Department parameters
+Create Proc spGetEmployeesByGenderAndDepartment
+@Gender nvarchar(20),
+@DepartmentId int
+as
+Begin
+    Select Name, Gender, DepartmentId from tblEmployees Where Gender = @Gender
+	and DepartmentId = @DepartmentId
+End
