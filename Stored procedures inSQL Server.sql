@@ -26,3 +26,7 @@ spGetEmployeesByGenderAndDepartment 'Male',1
 
 --Executing spGetEmployeesByGenderAndDepartment stored procedure by specifying the parameters--
 spGetEmployeesByGenderAndDepartment @DepartmentId = 1, @Gender = 'Male'
+
+--Getting Definitions of stored procedures--
+sp_helptext spGetEmployees
+
