@@ -20,3 +20,6 @@ Begin
     Select Name, Gender, DepartmentId from tblEmployees Where Gender = @Gender
 	and DepartmentId = @DepartmentId
 End
+
+--Executing spGetEmployeesByGenderAndDepartment stored procedure--
+spGetEmployeesByGenderAndDepartment 'Male',1
