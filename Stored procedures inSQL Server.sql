@@ -30,3 +30,9 @@ spGetEmployeesByGenderAndDepartment @DepartmentId = 1, @Gender = 'Male'
 --Getting Definitions of stored procedures--
 sp_helptext spGetEmployees
 
+--Altering A Stored Procedure--
+ALTER PROCEDURE spGetEmployees  
+AS  
+BEGIN  
+     Select Name, Gender from tblEmployees order by Name
+END
