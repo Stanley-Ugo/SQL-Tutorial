@@ -36,3 +36,6 @@ AS
 BEGIN  
      Select Name, Gender from tblEmployees order by Name
 END
+
+--Deleting a stored procedure--
+Drop Proc spGetEmployees
