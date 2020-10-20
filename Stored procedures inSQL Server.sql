@@ -8,3 +8,5 @@ BEGIN
      Select Name, Gender from tblEmployees
 END
 
+--Executing the Stored Procedure
+spGetEmployees
