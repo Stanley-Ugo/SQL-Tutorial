@@ -39,3 +39,17 @@ END
 
 --Deleting a stored procedure--
 Drop Proc spGetEmployees
+
+--Viewing the text--
+sp_helptext spGetEmployeesByGenderAndDepartment
+
+--Adding Encryption to the stored procedure text--
+ALTER Proc spGetEmployeesByGenderAndDepartment  
+@Gender nvarchar(20),  
+@DepartmentId int
+WITH Encryption
+as  
+Begin  
+    Select Name, Gender, DepartmentId from tblEmployees Where Gender = @Gender  
+ and DepartmentId = @DepartmentId  
+End
