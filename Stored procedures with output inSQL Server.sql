@@ -30,3 +30,12 @@ Print @TotalCount
 Declare @TotalCount int
 Execute spGetEmployeeCountByGender @EmployeeCount = @TotalCount output,@Gender = 'Male'
 Print @TotalCount
+
+--Getting information from any object
+--checking details text--
+sp_help spGetEmployeeCountByGender
+--OR--
+sp_help tblEmployees
+--Checking stored procedures table dependencies--
+sp_depends tblEmployees
+
