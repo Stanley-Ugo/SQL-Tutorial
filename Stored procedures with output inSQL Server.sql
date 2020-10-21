@@ -39,3 +39,15 @@ sp_help tblEmployees
 --Checking stored procedures table dependencies--
 sp_depends tblEmployees
 
+--Return Values Stored Procedures--
+--Creating the return stored procedure
+Create Proc spGetTotalCount2
+as
+Begin
+   return (Select COUNT(ID) from tblEmployees)
+End
+
+--Executing the returned stored procedure--
+Declare @TotalEmp int
+Execute @TotalEmp = spGetTotalCount2
+Print @TotalEmp
