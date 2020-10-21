@@ -26,3 +26,7 @@ else
 
 Print @TotalCount
 
+--Specifying the parameters--
+Declare @TotalCount int
+Execute spGetEmployeeCountByGender @EmployeeCount = @TotalCount output,@Gender = 'Male'
+Print @TotalCount
