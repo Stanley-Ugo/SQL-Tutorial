@@ -16,3 +16,13 @@ Declare @TotalCount int
 Execute spGetEmployeeCountByGender 'Male', @TotalCount output
 Print @TotalCount
 
+--Checking for variable NUlls--
+Declare @TotalCount int
+Execute spGetEmployeeCountByGender 'Male', @TotalCount out
+if(@TotalCount is null)
+   Print '@TotalCount is Null'
+else
+   Print '@TotalCount is not Null'
+
+Print @TotalCount
+
