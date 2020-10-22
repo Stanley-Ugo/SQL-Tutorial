@@ -63,3 +63,18 @@ Insert into tblEmployeesGenderAndDate Values ('Todd','1980-12-30 00:00:00.000','
 
 Select * from tblEmployeesGenderAndDate
 
+
+--***************************************************--
+--Multi-Statement Valued functions--
+Create Function fn_MSTVF_GetEmployees()
+Returns @Table Table (Id int, Name nvarchar(20), DOB Date)
+as
+Begin
+    Insert Into @Table
+	Select Id, Name, CAST(DateOfBirth as Date) from tblEmployeesDate
+
+	Return
+End
+
+--Calling the function--
+Select * from fn_MSTVF_GetEmployees()
