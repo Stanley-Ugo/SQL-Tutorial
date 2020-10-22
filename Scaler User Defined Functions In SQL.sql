@@ -17,3 +17,13 @@ END
 
 --Executing the CalculateAge() function--
 Select dbo.CalculateAge('11/10/1992')
+
+Select * from tblEmployeesDate
+
+--Calculate the age with CalculateAge function for tblEmployeesDate table--
+Select Id, Name, dbo.CalculateAge(DateOfBirth) as Age from tblEmployeesDate
+
+--Calculate the age with CalculateAge function where Age > 30 for tblEmployeesDate table--
+Select Id, Name, dbo.CalculateAge(DateOfBirth) as Age from tblEmployeesDate
+Where dbo.CalculateAge(DateOfBirth) > 30
+
