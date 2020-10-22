@@ -35,3 +35,42 @@ ON tblEmployees.DepartmentId = tblDepartment.Id
 
 --Executing the View--
 Select * from vwEmployeeDetailsByDepartment
+
+--*************************************************--
+--INDEXED VIEWS IN SQL Server--
+--Creating two sample tables--
+Create Table tblProduct
+(
+ProductId int Identity(1,1) Primary Key,
+Name nvarchar(20) NOT NULL,
+UnitPrice int NOT NULL
+)
+
+Create Table tblProductSales
+(
+ProductId int,
+QuantitySold int
+)
+
+Select * from tblProduct
+Select * from tblProductSales
+
+--Seeding Data to both Tables--
+Insert into tblProduct Values ('Clips', 10)
+
+Insert into tblProductSales Values (1,14)
+
+--Creating a View that Sums the TotalSalesByProduct--
+Create view vWTotalSalesByProduct
+With Schemabinding
+as
+Select Name,
+SUM(ISNULL((QuantitySold * UnitPrice), 0)) as TotalSales,
+COUNT_BIG(*) as TotalTransactions
+from dbo.tblProductSales
+Join dbo.tblProduct
+On dbo.tblProduct.ProductId = dbo.tblProductSales.ProductId
+Group by Name
+
+--Executing the vWTotalSalesByProduct View--
+Select * from vWTotalSalesByProduct
