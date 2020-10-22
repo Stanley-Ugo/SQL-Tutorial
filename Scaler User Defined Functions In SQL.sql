@@ -82,3 +82,14 @@ Select * from fn_MSTVF_GetEmployees()
 
 
 --**********************************************************--
+--Creating a Temporary Table--
+--Local temp table--
+Create Table #PersonDetails(Id int, Name nvarchar(20))
+
+--Global temp table--
+Create Table ##EmployeeDetails(Id int, Name nvarchar(20))
+
+--Seeding the temp table--
+Insert into #PersonDetails Values (3, 'Todd')
+
+Select * from #PersonDetails
