@@ -74,3 +74,28 @@ Group by Name
 
 --Executing the vWTotalSalesByProduct View--
 Select * from vWTotalSalesByProduct
+
+--Creating a clustered index of the View--
+Create Unique Clustered Index UIX_vWTotalSalesByProduct_Name
+on vWTotalSalesByProduct(Name)
+
+--*********************************************--
+--VIEW LIMITATIONS--
+--Not possible to pass parameters to Views--
+Create View vWEmployeeDetails
+@Gender nvarchar(20)
+as
+Select Id, Name, Gender, DepartmentId
+from tblEmployees
+Where Gender = @Gender    --This returns an Error.
+
+--Instead do this with an Inline table function for parameterized views--
+Create function fnEmployeeDetails(@Gender nvarchar(20))
+Returns Table
+as
+Return
+(Select Id, Name, Gender, DepartmentId
+from tblEmployees where Gender = @Gender)
+
+--Calling the inline table function--
+Select * from dbo.fnEmployeeDetails('Male')
