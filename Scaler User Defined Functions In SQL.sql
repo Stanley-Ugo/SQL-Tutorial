@@ -15,3 +15,5 @@ BEGIN
 	RETURN @Age
 END
 
+--Executing the CalculateAge() function--
+Select dbo.CalculateAge('11/10/1992')
