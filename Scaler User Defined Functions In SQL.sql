@@ -27,3 +27,39 @@ Select Id, Name, dbo.CalculateAge(DateOfBirth) as Age from tblEmployeesDate
 Select Id, Name, dbo.CalculateAge(DateOfBirth) as Age from tblEmployeesDate
 Where dbo.CalculateAge(DateOfBirth) > 30
 
+
+--*************************************************--
+--INLINE TABLE VALUED FUNCTIONs--
+--Creating the table  valued function fn_EmployeesByGender--
+CREATE FUNCTION fn_EmployeesByGender(@Gender nvarchar(10))
+RETURNS TABLE
+AS
+RETURN (Select Id, Name, DateOfBirth, Gender, DepartmentId
+        from tblEmployeesGenderAndDate
+		Where Gender = @Gender)
+
+--To Call the function--
+Select * from fn_EmployeesByGender('Male')
+
+--To Call the function with a where clause--
+Select * from fn_EmployeesByGender('Male') where Name = 'Sam'
+
+--Table returned can be used in JOINS--
+Select Name, Gender, DepartmentName
+from   fn_EmployeesByGender('Male') E
+JOIN   tblDepartment D ON D.Id = E.DepartmentId
+
+--Sample table--
+Create Table tblEmployeesGenderAndDate
+(Id Int Identity(1,1) Primary Key,
+Name nvarchar(20) NOT NULL,
+DateOfBirth Date NOT NULL,
+Gender nvarchar(20),
+DepartmentId int
+)
+
+--Seeding the table--
+Insert into tblEmployeesGenderAndDate Values ('Todd','1980-12-30 00:00:00.000','Male',1)
+
+Select * from tblEmployeesGenderAndDate
+
