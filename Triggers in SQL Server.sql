@@ -178,3 +178,21 @@ Begin
 		on tblEmployee.Id = inserted.id
 		End
 	End
+
+
+--*****************************************************--
+--INSTEAD OF DELETE TRIGGERS--
+Create Trigger tr_vWEmployeeDetails_InsteadOfDelete
+on vWEmployeeDetails
+instead of Delete
+as
+Begin
+     Delete  tblEmployee
+	 from tblEmployee
+	 Join Deleted
+	 on tblEmployee.Id = Deleted.Id
+
+	 --Subquery
+	 --Delete from tblEmployee
+	 --Where Id in (Select id from Delete.id)
+End
