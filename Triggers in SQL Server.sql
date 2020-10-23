@@ -39,3 +39,57 @@ END
 
 --Deleting from tblEmployee to trigger the Delete TRIGGER function--
 Delete from tblEmployee where Id = 2
+
+--Creating TRIGGER for UPDATE in tblEmployeeAudit--
+CREATE TRIGGER tr_tblEmployee_ForUpdate
+ON tblEmployee
+FOR UPDATE
+AS
+BEGIN
+    Declare @Id int
+	Declare @OldName nvarchar(20), @NewName nvarchar(20)
+	Declare @OldSalary int, @NewSalary int
+	Declare @OldGender nvarchar(20), @NewGender nvarchar(20)
+	Declare @OldDeptId int, @NewDeptId int
+
+	Declare @AuditString nvarchar(1000)
+
+	Select *
+	into #TempTable
+	from inserted
+
+	While(Exists(Select Id from #TempTable))
+	Begin
+	    Set @AuditString = ''
+
+		Select Top 1 @Id = Id, @NewName = Name,
+		@NewGender = Gender, @NewSalary = Salary,
+		@NewDeptId = DepartmentId
+		from #TempTable
+
+		Select @OldName = Name, @OldGender = Gender,
+		@OldSalary = Salary, @OldDeptId = DepartmentId
+		from deleted where Id = @Id
+
+		Set @AuditString = 'Employee with Id = ' + Cast(@Id as nvarchar(4)) + 'changed'
+		if(@OldName <> @NewName)
+		      Set @AuditString = @AuditString + ' Name from ' + @OldName + ' to ' + @NewName
+
+		if(@OldName <> @NewName)
+		      Set @AuditString = @AuditString + ' Gender from ' + @OldGender + ' to ' + @NewGender
+
+		if(@OldName <> @NewName)
+		      Set @AuditString = @AuditString + ' Salary from ' + Cast(@OldSalary as nvarchar(20)) + ' to ' + @NewSalary
+
+		if(@OldName <> @NewName)
+		      Set @AuditString = @AuditString + ' DepartmentId from ' + Cast(@OldDeptId as nvarchar(4)) + ' to ' + @NewDeptId
+
+	    Insert into tblEmployeeAudit Values (@AuditString)
+
+		Delete from #TempTable where Id = @Id
+
+	END
+END
+
+--Updating from tblEmployee to trigger the Update TRIGGER function--
+Update tblEmployee set Name = 'Todd', Salaray = 2000, Gender = 'Female' where Id = 4
