@@ -25,3 +25,44 @@ as
 Select DeptName, TotalEmployees
 from EmployeeCount
 Where TotalEmployees >= 2
+
+--*************************************************--
+--Common Table Expressions(CTE)--
+With EmployeeCount (DepartmentId, TotalEmployees)
+as
+(
+     Select DeptName, COUNT(*) as TotalEmployees
+	 from tblEmployee
+	 group by DepartmentId
+)
+
+Select DepartmentName, TotalEmployees
+from tblDepartment
+Join EmployeeCount
+on tblDepartment.Id = EmployeeCount.DepartmentId
+order by TotalEmployees
+
+--Creating Multiple CTE Using single with clause--
+With EmployeesCountBy_Payroll_IT_Dept(DepartmentName, Total)
+as
+(
+      Select DeptName, COUNT(Id) as TotalEmloyees
+	  from tblEmployees
+	  JOIN tblDepartment
+	  On tblEmployees.DepartmentId = tblDepartment.Id
+	  Where DeptName IN ('Payroll','IT')
+	  group by DeptName
+),
+EmployeeCountBy_HR_Admin_Dept(DepartmentName, Total)
+as
+(
+      Select DeptName, COUNT(Id) as TotalEmloyees
+	  from tblEmployees
+	  JOIN tblDepartment
+	  On tblEmployees.DepartmentId = tblDepartment.Id
+	  Where DeptName IN ('HR','Admin')
+	  group by DeptName
+)
+Select * from EmployeeCountBy_HR_Admin_Dept
+UNION
+Select * from EmployeesCountBy_Payroll_IT_Dept
