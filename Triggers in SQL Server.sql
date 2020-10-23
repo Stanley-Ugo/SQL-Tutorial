@@ -93,3 +93,35 @@ END
 
 --Updating from tblEmployee to trigger the Update TRIGGER function--
 Update tblEmployee set Name = 'Todd', Salaray = 2000, Gender = 'Female' where Id = 4
+
+
+
+--***********************************************--
+--INSTEAD OF INSERT TRIGGER In SQL--
+Create trigger tr_vWEmployeeDetails_InsteadOfInsert
+on vWEmployeeDetails
+Instead of Insert
+as
+Begin
+    Declare @DeptId int
+
+	Select @DeptId = DeptId
+	from tblDepartment
+	Join inserted
+	On inserted.DepartmentName = tblDepartment.DepartmentName
+
+	if(@DeptId Is NULL)
+	Begin
+	    Raiserror('Invalid Department Name.', 16,1)
+		return
+	End
+
+	insert into tblEmployee(Id, Name, Gender, DepartmentId)
+	Select Id, Name, Gender, @DeptId
+	from inserted
+End
+
+
+
+--*******************************************--
+--INSTEAD OF UPDATE TRIGGERS IN SQL Server--
