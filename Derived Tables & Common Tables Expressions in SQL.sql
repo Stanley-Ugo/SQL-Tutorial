@@ -92,3 +92,29 @@ Update EmployeesByDepartment set Gender = 'Male' where Id = 1
 
 Select * from EmployeesByDepartment
 
+
+
+--*********************************************--
+--Recursive CTEs--
+With
+EmployeeCTE (EmployeeId, Name, ManagerId, [Level])
+as
+(
+     Select EmployeeId, Name, ManagerId, 1
+	 from tblEmployee
+	 where ManagerId is NULL
+
+	 Union all
+
+	 Select tblEmployee.EmployeeId, tblEmployee.Name,
+	 tblEmployee.ManagerId, EmployeeCTE.[Level] + 1
+	 from tblEmployee
+	 JOIN EmployeeCTE
+	 on tblEmployee.ManagerId = EmployeeCTE.EmployeeId
+)
+Select EmpCTE.Name as Employee, ISNULL(MgrCTE.Name, 'Super boss') as Manager,
+EmpCTE.[Level]
+from EmployeeCTE EmpCTE
+Left Join EmployeeCTE MgrCTE
+On EmpCTE.ManagerId = MgrCTE.EmployeeId
+
