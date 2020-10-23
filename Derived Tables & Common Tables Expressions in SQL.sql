@@ -66,3 +66,29 @@ as
 Select * from EmployeeCountBy_HR_Admin_Dept
 UNION
 Select * from EmployeesCountBy_Payroll_IT_Dept
+
+
+--**********************************************--
+--Updateable CTE on one base table--
+With Employees_Name_gender
+as
+(
+     Select Id, Name, Gender from tblEmployee
+)
+Update Employees_Name_Gender set Gender = 'Female' where Id = 1
+
+Select * from tblEmployees
+
+--Updateable CTEs On two based table--
+With EmployeesByDepartment
+as
+(
+     Select Id, Name, Gender, DepartmentName
+	 from tblEmployees
+	 Join tblDepartment
+	 On tblDepartment.Id = tblEmployees.DepartmentId
+)
+Update EmployeesByDepartment set Gender = 'Male' where Id = 1
+
+Select * from EmployeesByDepartment
+
