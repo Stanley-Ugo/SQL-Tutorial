@@ -196,3 +196,6 @@ Begin
 	 --Delete from tblEmployee
 	 --Where Id in (Select id from Delete.id)
 End
+
+
+
