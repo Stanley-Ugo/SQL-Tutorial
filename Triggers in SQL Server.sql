@@ -125,3 +125,56 @@ End
 
 --*******************************************--
 --INSTEAD OF UPDATE TRIGGERS IN SQL Server--
+Create Trigger tr_vWEmployeeDetails_InsteadOfUpdate
+On vWEmployeeDetails
+instead of Update
+as
+Begin
+   --if EmployeeId is Updated--
+   if(Update(Id))
+   Begin
+       Raiserror('Id cannot be changed', 16, 1)
+	   Return
+   End
+
+   --If DeptName is Updated--
+   if(update(@DeptName))
+   Begin
+       Declare @DeptId int
+
+	   Select @DeptId = DeptId
+	   from tblDepartment
+	   Join inserted
+	   on inserted.DepartmentName = tblDepartment.DepartmentName
+
+	   if(@DeptId is Null)
+	   Begin
+	    Raiserror('Invalid department name', 16, 1)
+		return
+	   End
+
+	   update tblEmployee set DepartmentId = @DeptId
+	   from inserted
+	   join tblEmployee
+	   on tblEmployee.Id = inserted.id
+
+	End
+
+	--If Gender is Updated--
+	if(update(Gender))
+	Begin
+	    Update tblEmployee set Gender = inserted.Gender
+		from inserted
+		join tblEmployee
+		on tblEmployee.Id = inserted.id
+	End
+
+	--if name is updated--
+	if(updated(Name))
+	Begin
+	    update tblEmployee set Name = inserted.Name
+		from inserted
+		Join tblEmployee
+		on tblEmployee.Id = inserted.id
+		End
+	End
