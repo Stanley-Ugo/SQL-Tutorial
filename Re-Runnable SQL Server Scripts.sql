@@ -18,3 +18,9 @@ Else
 Begin
     Print 'Table tblEmployee already Exist'
 End
+
+
+--*************************************************************--
+--Altering a Column of a table in SQL Server--
+ALTER TABLE tblEmployee
+ALTER COLUMN Slary int
