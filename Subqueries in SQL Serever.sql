@@ -14,3 +14,11 @@ Select Name,
 from tblProduct
 order by Name
 
+
+--************************************************************--
+--Inserting Large Amount of Random Data into SQL Server tables for Perfomance testing--
+
+
+
+
+
