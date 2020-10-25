@@ -21,3 +21,4 @@ Select Id, Name, Gender, Salary  from tblEmployee Where Salary >= 50000
 Except
 Select Id, Name, Gender, Salary  from tblEmployee Where Salary >= 60000
 Order by Id Desc
+
