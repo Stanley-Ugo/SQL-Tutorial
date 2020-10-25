@@ -2,3 +2,6 @@
 
 --How to spot open transactions--
 DBCC OpenTran
+
+--Killing a Process in SQL Syntax-
+Kill ProcessId
