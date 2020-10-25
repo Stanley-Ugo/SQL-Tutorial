@@ -10,3 +10,8 @@ Kill ProcessId
 Select Id, Name, Gender from TableA
 EXCEPT
 Select Id, Name, Gender from TableB -- Returns rows that aren't on both tables
+
+--Except Operator on the same table using the where clause--
+Select Id, Name, Gender, Salary  from tblEmployee Where Salary >= 50000
+Except
+Select Id, Name, Gender, Salary  from tblEmployee Where Salary >= 60000
