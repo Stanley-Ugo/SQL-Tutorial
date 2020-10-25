@@ -15,3 +15,9 @@ Select Id, Name, Gender from TableB -- Returns rows that aren't on both tables
 Select Id, Name, Gender, Salary  from tblEmployee Where Salary >= 50000
 Except
 Select Id, Name, Gender, Salary  from tblEmployee Where Salary >= 60000
+
+--Except Operator on the same table using the where clause & Order by--
+Select Id, Name, Gender, Salary  from tblEmployee Where Salary >= 50000
+Except
+Select Id, Name, Gender, Salary  from tblEmployee Where Salary >= 60000
+Order by Id Desc
