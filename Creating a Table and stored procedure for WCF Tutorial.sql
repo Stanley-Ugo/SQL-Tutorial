@@ -27,3 +27,15 @@ Execute spGetEmployee '1'
 
 --This Clears table data incase of Mistakes to be reseeded--
 TRUNCATE Table tblEmployeeWCF
+
+--Creating a spSaveEmpmployeeWCF store procedure--
+Create procedure spSaveEmployeeWCF
+@Id int,
+@Name nvarchar(50),
+@Gender nvarchar(50),
+@DateOfBirth DateTime
+as
+Begin
+    Insert into tblEMployeeWCF
+	Values (@Id, @Name, @Gender, @DateOfBirth)
+End
