@@ -1,3 +1,4 @@
+--Creating the Sample tblEmployeeWCF Table--
 Create Table tblEmployeeWCF
 (
 Id int,
