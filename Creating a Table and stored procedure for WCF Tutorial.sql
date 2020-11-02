@@ -46,4 +46,8 @@ Begin
 	Values (@Id, @Name, @Gender, @DateOfBirth, @EmployeeType, @AnnualSalary, @HourlyPay, @HoursWorked)
 End
 
--
+--Adding a few more columns to the tblEmployeeWCF table--
+Alter table tblEmployeeWCF Add
+EmployeeType int, AnnualSalary int, HourlyPay int, HoursWorked int
+
+Select * from tblEmployeeWCF
