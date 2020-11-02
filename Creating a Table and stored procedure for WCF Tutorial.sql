@@ -25,10 +25,7 @@ End
 --Executing the Stored Procedure--
 Execute spGetEmployee '1'
 
---This Clears table data incase of Mistakes to be reseeded--
-TRUNCATE Table tblEmployeeWCF
---OR--
-DELETE from tblEmployeeWCF
+
 
 --Creating a spSaveEmpmployeeWCF store procedure--
 Alter procedure spSaveEmployeeWCF
