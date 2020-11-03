@@ -15,3 +15,6 @@ as
 Begin
     Select * from tblSampleEmployee
 End
+
+--Ececuting the stored procedure--
+Execute spGetSampleEmployee
