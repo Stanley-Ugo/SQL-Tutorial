@@ -9,6 +9,9 @@ Gender nvarchar NOT NULL,
 --Executing the sample table--
 Select * from tblSampleEmployee
 
+--Inserting Data into tblSampleEmployee--
+Insert into tblSampleEmployee Values ('Mark','Male')
+
 --Creating a stored procedure--
 Create Procedure spGetSampleEmployee
 as
@@ -18,3 +21,4 @@ End
 
 --Ececuting the stored procedure--
 Execute spGetSampleEmployee
+
