@@ -35,3 +35,10 @@ Select * from tblSampleDepartment
 
 --Inserting Data into tblSampleDepartment--
 Insert into tblSampleDepartment Values ('1','HR')
+
+--Creating a stored procedure--
+Create Procedure spGetSampleDepartment
+as
+Begin
+    Select * from tblSampleDepartment
+End
