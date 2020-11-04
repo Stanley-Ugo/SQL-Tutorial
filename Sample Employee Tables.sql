@@ -32,3 +32,6 @@ Name nvarchar NOT NULL,
 
 --Executing the sample table tblSampleDepatment--
 Select * from tblSampleDepartment
+
+--Inserting Data into tblSampleDepartment--
+Insert into tblSampleDepartment Values ('1','HR')
