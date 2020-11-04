@@ -29,3 +29,6 @@ Create Table tblSampleDepartment
 DepartmentId int Identity(1,1) NOT NULL,
 Name nvarchar NOT NULL,
 )
+
+--Executing the sample table tblSampleDepatment--
+Select * from tblSampleDepartment
