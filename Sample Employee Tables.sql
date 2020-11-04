@@ -42,3 +42,6 @@ as
 Begin
     Select * from tblSampleDepartment
 End
+
+--Ececuting the stored procedure--
+Execute spGetSampleEmployee
