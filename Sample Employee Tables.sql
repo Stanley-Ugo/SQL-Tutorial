@@ -23,3 +23,9 @@ End
 Execute spGetSampleEmployee
 
 --*******************************************************--
+--Creating Sample Department table--
+Create Table tblSampleDepartment
+(
+DepartmentId int Identity(1,1) NOT NULL,
+Name nvarchar NOT NULL,
+)
