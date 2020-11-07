@@ -65,3 +65,6 @@ DateOfBirth datetime
 Insert into tblEmployeeWCF Values (1, 'Mark', 'Male', '10/10/1980')
 Insert into tblEmployeeWCF Values (2, 'Mary', 'Female', '11/10/1981')
 Insert into tblEmployeeWCF Values (3, 'John', 'Male', '8/10/1979')
+
+--Executing the Select all Command--
+Select * from tblGreetingServiceIIS
