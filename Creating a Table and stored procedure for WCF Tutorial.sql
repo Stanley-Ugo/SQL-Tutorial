@@ -81,3 +81,19 @@ End
 
 --Executing the stored procedure--
 Execute spGetGetGreetingServiceIIS
+
+--Creating a spSaveGetGreetingServiceIIS store procedure--
+Alter procedure spSaveGetGreetingServiceIIS
+@Id int,
+@Name nvarchar(50),
+@Gender nvarchar(50),
+@DateOfBirth DateTime,
+@EmployeeType int,
+@AnnualSalary int = NULL,
+@HourlyPay int = NULL,
+@HoursWorked int = NULL
+as
+Begin
+    Insert into tblEMployeeWCF
+	Values (@Id, @Name, @Gender, @DateOfBirth, @EmployeeType, @AnnualSalary, @HourlyPay, @HoursWorked)
+End
