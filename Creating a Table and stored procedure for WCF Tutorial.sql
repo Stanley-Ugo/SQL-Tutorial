@@ -78,3 +78,6 @@ Begin
 	from tblEmployeeWCF
 	where Id = @Id
 End
+
+--Executing the stored procedure--
+Execute spGetGetGreetingServiceIIS
