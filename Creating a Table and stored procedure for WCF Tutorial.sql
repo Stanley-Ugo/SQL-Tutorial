@@ -97,3 +97,6 @@ Begin
     Insert into tblEMployeeWCF
 	Values (@Id, @Name, @Gender, @DateOfBirth, @EmployeeType, @AnnualSalary, @HourlyPay, @HoursWorked)
 End
+
+--Executing the stored procedure--
+Execute spSaveGetGreetingServiceIIS
