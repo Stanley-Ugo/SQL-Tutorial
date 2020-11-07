@@ -51,3 +51,12 @@ Alter table tblEmployeeWCF Add
 EmployeeType int, AnnualSalary int, HourlyPay int, HoursWorked int
 
 Select * from tblEmployeeWCF
+
+--Creating the Sample tblGreetingServiceIIS Table--
+Create Table tblGreetingServiceIIS
+(
+Id int,
+Name nvarchar(50),
+Gender nvarchar(50),
+DateOfBirth datetime
+)
