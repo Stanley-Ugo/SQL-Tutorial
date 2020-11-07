@@ -68,3 +68,13 @@ Insert into tblEmployeeWCF Values (3, 'John', 'Male', '8/10/1979')
 
 --Executing the Select all Command--
 Select * from tblGreetingServiceIIS
+
+--Creating a GetGreetingServiceIIS Stored procedure--
+Alter procedure spGetGreetingServiceIIS
+@Id int
+as
+Begin
+    Select Id, Name, Gender, DateOfBirth, EmployeeType, AnnualSalary, HourlyPay, HoursWorked
+	from tblEmployeeWCF
+	where Id = @Id
+End
