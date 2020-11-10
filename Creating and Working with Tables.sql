@@ -1,4 +1,4 @@
---Creating Tables--
+--Creating Tables in SQL--
 Use [Sample]
 Go
 
