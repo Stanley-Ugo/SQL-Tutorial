@@ -24,7 +24,7 @@ DEFAULT 3 FOR GENDERID
 ALTER TABLE tblPerson
 DROP CONSTRAINT DF_tblPerson_GenderId
 
---Deleting a table row--
+--Deleting a table row---
 Delete from tblPerson where ID = 4
 
 --Adding a check constraint for tblPerson table--
