@@ -20,7 +20,7 @@ ALTER TABLE tblPerson
 ADD CONSTRAINT DF_tblPerson_GenderId
 DEFAULT 3 FOR GENDERID
 
---Dropping a Constraint
+--Dropping a Constraint--
 ALTER TABLE tblPerson
 DROP CONSTRAINT DF_tblPerson_GenderId
 
