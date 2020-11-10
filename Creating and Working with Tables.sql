@@ -15,7 +15,7 @@ Foreign Key (GenderId) references tblGender (ID)
 --Populating a Table---
 Insert into tblPerson (ID, Name, Email, GenderId) Values (7, 'Rich', 'r@r.com', 1)
 
---Adding a default value(3) if none is provided in the GenderId column--
+--Adding a default value(3) if none is provided in the GenderId column---
 ALTER TABLE tblPerson
 ADD CONSTRAINT DF_tblPerson_GenderId
 DEFAULT 3 FOR GENDERID
