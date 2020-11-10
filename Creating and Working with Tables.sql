@@ -12,7 +12,7 @@ Gender nvarchar(50) NOT NULL
 Alter table tblPerson add constraint tblPerson_GenderID_FK
 Foreign Key (GenderId) references tblGender (ID)
 
---Populating a Table--
+--Populating a Table---
 Insert into tblPerson (ID, Name, Email, GenderId) Values (7, 'Rich', 'r@r.com', 1)
 
 --Adding a default value(3) if none is provided in the GenderId column--
