@@ -17,7 +17,7 @@ Select ABS(-105.1) -- returns the Absolute value 105.1 without the -negative sig
 --CEILING Function--
 Select CEILING(15.2) -- returns 16
 Select CEILING(-15.2) --returns -15
---FLOOR--
+--FLOOR Functions--
 Select FLOOR(15.2) -- returns 15
 select FLOOR(-15.2) -- returns -16
 --POWER--
