@@ -24,7 +24,7 @@ select FLOOR(-15.2) -- returns -16
 Select POWER(2,3) -- returns 8
 --SQUARE Functions--
 Select SQUARE(9) -- returns 81
---SQRT--
+--SQRT Function--
 Select SQRT(9) -- returns the square root of 3
 --RAND--
 Select RAND() -- returns random numbers between 1 and 0
