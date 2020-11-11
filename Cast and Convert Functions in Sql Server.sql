@@ -26,7 +26,7 @@ Select POWER(2,3) -- returns 8
 Select SQUARE(9) -- returns 81
 --SQRT Function--
 Select SQRT(9) -- returns the square root of 3
---RAND--
+--RAND Function--
 Select RAND() -- returns random numbers between 1 and 0
 Select RAND(1) -- returns the same number between 1 and 0
 Select FLOOR(RAND() * 100) -- returns random whole number from 1 to 100
