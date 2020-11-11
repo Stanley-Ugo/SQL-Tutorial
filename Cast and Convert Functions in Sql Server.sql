@@ -22,7 +22,7 @@ Select FLOOR(15.2) -- returns 15
 select FLOOR(-15.2) -- returns -16
 --POWER Function--
 Select POWER(2,3) -- returns 8
---SQUARE--
+--SQUARE Functions--
 Select SQUARE(9) -- returns 81
 --SQRT--
 Select SQRT(9) -- returns the square root of 3
