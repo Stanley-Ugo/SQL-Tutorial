@@ -20,7 +20,7 @@ Select CEILING(-15.2) --returns -15
 --FLOOR Functions--
 Select FLOOR(15.2) -- returns 15
 select FLOOR(-15.2) -- returns -16
---POWER--
+--POWER Function--
 Select POWER(2,3) -- returns 8
 --SQUARE--
 Select SQUARE(9) -- returns 81
