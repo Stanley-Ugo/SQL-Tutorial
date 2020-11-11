@@ -12,6 +12,7 @@ Select Id, Name, Name + ' - ' + CAST(Id as nvarchar) as [Name - Id] from tblEmpl
 
 
 --MATHEMATICAL FUNCTION IN SQLServer--
+--ABSOLUTE Value--
 Select ABS(-105.1) -- returns the Absolute value 105.1 without the -negative sign
 --CEILING--
 Select CEILING(15.2) -- returns 16
