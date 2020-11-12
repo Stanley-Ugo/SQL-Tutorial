@@ -25,3 +25,10 @@ GO
 
 --Selecting the table--
 Select * from Contacts
+
+--Creating a stored procedure to get table data--
+CREATE PROC spGetContact
+AS
+BEGIN 
+	SELECT * FROM Contacts
+END
