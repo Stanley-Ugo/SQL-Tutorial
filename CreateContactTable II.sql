@@ -32,3 +32,28 @@ AS
 BEGIN 
 	SELECT * FROM Contacts
 END
+
+--Creating a stored procedure to populate the table--
+CREATE PROC spCreateContact
+	@FirstName nvarchar(50), 
+	@LastName nvarchar(50), 
+	@Email nvarchar(100), 
+	@Telephone nvarchar(20),
+	@Mobile nvarchar(20), 
+	@CompanyID int,
+	@Address1 nvarchar(50), 
+	@Address2 nvarchar(50), 
+	@CityTown nvarchar(50), 
+	@StateCounty nvarchar(50), 
+	@PostCode nvarchar(10), 
+	@Country nvarchar(100), 
+	@CustomField1 nvarchar(50),
+	@CustomField2 nvarchar(50),
+	@CustomDate date
+	AS
+	BEGIN
+		INSERT INTO Contacts (FirstName, LastName, Email, Telephone, Mobile,CompanyID,Address1,
+		Address2, CityTown, StateCounty,PostCode, Country, CustomField1, CustomField2, CustomDate)
+		VALUES(@FirstName, @LastName, @Email, @Telephone, @Mobile, @CompanyID, @Address1, @Address2, @CityTown,
+				@StateCounty,@PostCode, @Country, @CustomField1, @CustomField2, @CustomDate)
+	END
