@@ -1,4 +1,4 @@
-
+--Creating the Contact table--
 CREATE TABLE [dbo].[Contacts](
 	[ContactID] [int] IDENTITY(1,1) NOT NULL,
 	[FirstName] [nvarchar](50) NULL,
