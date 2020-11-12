@@ -23,4 +23,5 @@ CREATE TABLE [dbo].[Contacts](
 ) ON [PRIMARY]
 GO
 
+--Selecting the table--
 Select * from Contacts
