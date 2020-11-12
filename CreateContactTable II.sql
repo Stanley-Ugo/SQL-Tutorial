@@ -22,3 +22,4 @@ CREATE TABLE [dbo].[Contacts](
 ) ON [PRIMARY]
 GO
 
+Select * from Contacts
