@@ -26,6 +26,9 @@ GO
 --Selecting the table--
 Select * from Contacts
 
+--Deleting from the table--
+TRUNCATE Table Contacts
+
 --Creating a stored procedure to get table data--
 CREATE PROC spGetContact
 AS
