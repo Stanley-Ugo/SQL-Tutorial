@@ -26,7 +26,7 @@ GO
 --Selecting the table--
 Select * from Contacts
 
---Deleting from the table--
+--Truncate from the table all record--
 TRUNCATE Table Contacts
 
 --Creating a stored procedure to get table data--
