@@ -22,3 +22,6 @@ CREATE TABLE [dbo].[Contacts](
 ) ON [PRIMARY]
 GO
 
+--Deleting the Table Data--
+
+
