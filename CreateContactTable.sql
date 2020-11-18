@@ -28,3 +28,9 @@ Truncate Table Contacts
 --Viewing table rows--
 Select * from Contacts
 
+CREATE PROC spGetContact
+AS
+BEGIN 
+	SELECT * FROM Contacts
+END
+
