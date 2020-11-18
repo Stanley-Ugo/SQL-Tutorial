@@ -23,5 +23,5 @@ CREATE TABLE [dbo].[Contacts](
 GO
 
 --Deleting the Table Data--
-
+Truncate Table Contacts
 
