@@ -28,6 +28,7 @@ Truncate Table Contacts
 --Viewing table rows--
 Select * from Contacts
 
+--Adding a stored procedure--
 CREATE PROC spGetContact
 AS
 BEGIN 
