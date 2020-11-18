@@ -14,7 +14,8 @@ ADD BatchID int,
 FOREIGN KEY (BatchID) REFERENCES ContactBatch(BatchID)
 
 --Adding BatchName to ContactBatch table--
-
+ALTER TABLE ContactBatch
+ADD BatchName nvarchar
 
 --Selecting the Table BatchID--
 Select * from ContactBatch
@@ -25,11 +26,12 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE PROCEDURE [dbo].[AddBatchReturnIDWithOutput]
+ALTER PROCEDURE [dbo].[AddBatchReturnIDWithOutput]
       @DateCreated Date = NULL,
       @CreatedBy varchar(50),
       @DateModified date = null,
       @Status varchar(20) = null,
+	  @BatchName varchar(50) = null,
       @BatchID int output
 AS
 BEGIN
