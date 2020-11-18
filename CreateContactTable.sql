@@ -25,5 +25,6 @@ GO
 --Deleting the Table Data--
 Truncate Table Contacts
 
+--Viewing table rows--
 Select * from Contacts
 
