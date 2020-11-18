@@ -25,3 +25,5 @@ GO
 --Deleting the Table Data--
 Truncate Table Contacts
 
+Select * from Contacts
+
