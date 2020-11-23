@@ -24,7 +24,7 @@ CREATE TABLE [dbo].[Contacts](
 GO
 
 --Selecting the table--
-Select * from Contacts
+Select * from ContactBatch
 
 --Truncate from the table all record--
 TRUNCATE Table Contacts
