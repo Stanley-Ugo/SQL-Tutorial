@@ -36,7 +36,7 @@ BEGIN
 END
 
 --Editing the Contact Table By Batch Id--
-CREATE PROCEDURE spUpdateContactByBatchId
+ALTER PROCEDURE spUpdateContactByBatchId
 	@FirstName nvarchar(50), 
 	@LastName nvarchar(50), 
 	@Email nvarchar(100), 
@@ -55,9 +55,20 @@ CREATE PROCEDURE spUpdateContactByBatchId
 	@BatchID int
 	AS
 	BEGIN
-	    Delete from Contacts Where BatchID = @BatchID;
 		INSERT INTO Contacts (FirstName, LastName, Email, Telephone, Mobile,CompanyID,Address1,
 		Address2, CityTown, StateCounty,PostCode, Country, CustomField1, CustomField2, CustomDate, BatchID)
 		VALUES(@FirstName, @LastName, @Email, @Telephone, @Mobile, @CompanyID, @Address1, @Address2, @CityTown,
 				@StateCounty,@PostCode, @Country, @CustomField1, @CustomField2, @CustomDate, @BatchID)
 	END
+
+
+
+
+--Deleting by BatchId before inserting--
+CREATE PROCEDURE spDeleteContactByBatchId
+     @BatchID int
+	 AS
+	 BEGIN
+	      SET NOCOUNT ON;
+	      Delete from Contacts Where BatchID = @BatchID
+	 END
