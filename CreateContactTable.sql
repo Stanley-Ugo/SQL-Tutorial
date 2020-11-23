@@ -35,3 +35,29 @@ BEGIN
 	SELECT * FROM Contacts
 END
 
+--Editing the Contact Table By Batch Id--
+CREATE PROCEDURE spUpdateContactByBatchId
+	@FirstName nvarchar(50), 
+	@LastName nvarchar(50), 
+	@Email nvarchar(100), 
+	@Telephone nvarchar(20) = NULL,
+	@Mobile nvarchar(20), 
+	@CompanyID int,
+	@Address1 nvarchar(50) = NULL, 
+	@Address2 nvarchar(50) = NULL, 
+	@CityTown nvarchar(50) = NULL, 
+	@StateCounty nvarchar(50) = NULL, 
+	@PostCode nvarchar(10) = NULL, 
+	@Country nvarchar(100) = NULL, 
+	@CustomField1 nvarchar(50) = NULL,
+	@CustomField2 nvarchar(50) = NULL,
+	@CustomDate dateTime = NULL,
+	@BatchID int
+	AS
+	BEGIN
+	    Delete from Contacts Where BatchID = @BatchID;
+		INSERT INTO Contacts (FirstName, LastName, Email, Telephone, Mobile,CompanyID,Address1,
+		Address2, CityTown, StateCounty,PostCode, Country, CustomField1, CustomField2, CustomDate, BatchID)
+		VALUES(@FirstName, @LastName, @Email, @Telephone, @Mobile, @CompanyID, @Address1, @Address2, @CityTown,
+				@StateCounty,@PostCode, @Country, @CustomField1, @CustomField2, @CustomDate, @BatchID)
+	END
