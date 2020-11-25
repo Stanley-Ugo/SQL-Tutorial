@@ -73,7 +73,6 @@ ALTER PROCEDURE spUpdateContactByBatchId
 
 
 
-
 --Deleting by BatchId before inserting--
 CREATE PROCEDURE spDeleteContactByBatchId
      @BatchID int
