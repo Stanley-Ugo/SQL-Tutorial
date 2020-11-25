@@ -59,6 +59,13 @@ ALTER PROCEDURE spUpdateContactByBatchId
 		Address2, CityTown, StateCounty,PostCode, Country, CustomField1, CustomField2, CustomDate, BatchID)
 		VALUES(@FirstName, @LastName, @Email, @Telephone, @Mobile, @CompanyID, @Address1, @Address2, @CityTown,
 				@StateCounty,@PostCode, @Country, @CustomField1, @CustomField2, @CustomDate, @BatchID)
+
+		UPDATE t1
+		SET t1.DateModified = getdate()
+		FROM dbo.ContactBatch AS t1
+		INNER JOIN dbo.Contacts AS t2
+		ON t1.BatchID = t2.BatchID
+		WHERE t1.BatchID = @BatchID
 	END
 
 
