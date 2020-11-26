@@ -54,7 +54,7 @@ from tblEmployees
 FULL OUTER JOIN tblDepartment
 ON tblEmployees.DepartmentId = tblDepartment.Id
 
---Cross Join for DepartmentName--
+--Cross Join for DepartmentName---
 Select Name, Gender, Salary, DepartmentName
 from tblEmployees
 CROSS JOIN tblDepartment
