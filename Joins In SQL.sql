@@ -30,7 +30,7 @@ Insert Into tblEmployees Values ('Russell', 'Male',8800, Null)
 Select * from tblEmployees
 Select * from tblDepartment
 
---Inner Join for DepartmentName--
+--Inner Join for DepartmentName---
 Select Name, Gender, Salary, DepartmentName
 from tblEmployees
 INNER JOIN tblDepartment
