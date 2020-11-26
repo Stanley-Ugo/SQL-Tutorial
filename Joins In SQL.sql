@@ -36,7 +36,7 @@ from tblEmployees
 INNER JOIN tblDepartment
 ON tblEmployees.DepartmentId = tblDepartment.Id
 
---Left Join for DepartmentName--
+--Left Join for DepartmentName---
 Select Name, Gender, Salary, DepartmentName
 from tblEmployees
 LEFT OUTER JOIN tblDepartment
