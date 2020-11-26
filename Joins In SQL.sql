@@ -42,7 +42,7 @@ from tblEmployees
 LEFT OUTER JOIN tblDepartment
 ON tblEmployees.DepartmentId = tblDepartment.Id
 
---Right Join for DepartmentName--
+--Right Join for DepartmentName---
 Select Name, Gender, Salary, DepartmentName
 from tblEmployees
 RIGHT OUTER JOIN tblDepartment
