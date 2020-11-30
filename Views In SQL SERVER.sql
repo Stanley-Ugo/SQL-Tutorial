@@ -2,7 +2,7 @@
 Select * from tblEmployees
 Select * from tblDepartment
 
---Creating a View--
+--Creating a View---
 Create View vWEmployeesByDepartment
 as
 Select Name, Gender, Salary, DepartmentName
