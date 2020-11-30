@@ -19,7 +19,7 @@ Select * from vWEmployeesByDepartment
 Update vWEmployeesByDepartment
 Set Name = 'Mikey' Where Id = 2
 
---Deletes a Table row--
+--Deletes a Table row---
 Delete from vWEmployeesByDepartment Where Id = 2
 
 --Inserts a table row with a view--
