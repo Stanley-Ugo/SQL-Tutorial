@@ -15,7 +15,7 @@ Select * from vWEmployeesByDepartment
 
 --***************************************************--
 --UPDATEABLE VIEWS IN SQL Server--
---Updates a table row
+--Updates a table row--
 Update vWEmployeesByDepartment
 Set Name = 'Mikey' Where Id = 2
 
