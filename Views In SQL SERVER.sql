@@ -55,7 +55,7 @@ QuantitySold int
 Select * from tblProduct
 Select * from tblProductSales
 
---Seeding Data to both Tables--
+--Seeding Data to both Tables---
 Insert into tblProduct Values ('Clips', 10)
 
 Insert into tblProductSales Values (1,14)
