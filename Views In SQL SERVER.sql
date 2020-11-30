@@ -10,7 +10,7 @@ from tblEmployees
 Join tblDepartment
 On tblEmployees.DepartmentId = tblDepartment.Id
 
---Executing the View--
+--Executing the View---
 Select * from vWEmployeesByDepartment
 
 --***************************************************--
