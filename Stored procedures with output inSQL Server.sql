@@ -32,7 +32,7 @@ Execute spGetEmployeeCountByGender @EmployeeCount = @TotalCount output,@Gender =
 Print @TotalCount
 
 --Getting information from any object
---checking details text--
+--checking details text---
 sp_help spGetEmployeeCountByGender
 --OR--
 sp_help tblEmployees
