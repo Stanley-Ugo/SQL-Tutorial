@@ -1,7 +1,7 @@
 --Stored Procedure with output---
 Select * from tblEmployees
 
---Creating stored procedure for getting Employee count by Gender--
+--Creating stored procedure for getting Employee count by Gender---
 Create Procedure spGetEmployeeCountByGender
 @Gender nvarchar(20),
 @EmployeeCount int output
