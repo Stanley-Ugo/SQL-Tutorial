@@ -40,7 +40,7 @@ sp_help tblEmployees
 sp_depends tblEmployees
 
 --Return Values Stored Procedures--
---Creating the return stored procedure
+--Creating the return stored procedure--
 Create Proc spGetTotalCount2
 as
 Begin
