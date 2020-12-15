@@ -36,7 +36,7 @@ Print @TotalCount
 sp_help spGetEmployeeCountByGender
 --OR--
 sp_help tblEmployees
---Checking stored procedures table dependencies--
+--Checking stored procedures table dependencies---
 sp_depends tblEmployees
 
 --Return Values Stored Procedures--
