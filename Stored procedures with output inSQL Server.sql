@@ -11,7 +11,7 @@ Begin
 End
 
 --Executing the spGetEmployeeCountByGender stored procedure--
---First we create a variable for holding the output--
+--First we create a variable for holding the output---
 Declare @TotalCount int
 Execute spGetEmployeeCountByGender 'Male', @TotalCount output
 Print @TotalCount
