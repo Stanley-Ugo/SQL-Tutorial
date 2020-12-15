@@ -1,4 +1,4 @@
---Stored Procedure with output--
+--Stored Procedure with output---
 Select * from tblEmployees
 
 --Creating stored procedure for getting Employee count by Gender--
